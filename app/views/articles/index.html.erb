@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ </head>
+ <body>
+  <div class="container align-items-center">
+  <nav class="navbar d-flex justify-content-between navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Wikinimous</a>
+   <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <%=link_to "New Article", new_article_path%> </button>
+  </nav>
+ <h1 class="text-center"> Check the articles </h1>
+ <% @articles.each do |article| %>
+ <div id = "articlecard"class="align-baseline">>
+  <%=link_to article[:title],article_path(article)%>
+  <p><%= article[:content]%></p>
+</div>
+  <% end %>
+  </div>
+ </body>
+ </html>
